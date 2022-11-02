@@ -2,3 +2,4 @@
 Pythonban megírt horgász szimulátor.
 ## mukodik?
 ## ujra
+## proba 2
