@@ -1,0 +1,34 @@
+halallomany.csv - név, súly intervalum, méret intervalum, védettségi státusz
+halaim.csv - halak neve, súly, méret
+
+
+tó
+	nem eldönthető a dobás helye 
+	49% esély a halra 
+	1% aranyhal
+	azon belül random.choice a hal
+
+horgászás
+	ezután eldönthető h a vödörbe vagy vissza kerül-e a hal vagy eldobja a bokorba
+	rossz választás esetén bünti jár
+	vödörben lévő halak kilistázása	
+	egy session 5 dobás	
+
+halállomány
+	új halfaj betelpítése
+	halfaj kihalászása
+	halfaj módosítása
+	halfajok kilistázása
+
+
+felhasználó
+	új felhasználó(halaim törlése)
+
+aranyhal
+	kiír egy gratuláó üzenetet
+	bekér 3 kívánságot
+	valázsol egyet
+	semmi sem történik
+
+
+
