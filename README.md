@@ -21,6 +21,7 @@ Elindíthatunk egy 5 dobásból álló sorozatot.
 - Név szerint lehet keresni
 - Kiiratni a rekord hosszt
 - Kiiratni a rekord súlyt
+- meg lehet enni (kitörölni) a halakat 
 
 ## Új felhasználó
 
