@@ -32,15 +32,12 @@ def new_fish():
         max_mass = input('Hal maximum hossza: ')
     endangered = input('Hal védettsége: ')
     
-    
-    
     row = f'{name};{min_mass};{max_mass};{min_length};{max_length};{endangered}\n'
     f = open('halallomany.csv', 'a', encoding='UTF-8')
     f.write(row)
     f.close()
 
     fishes.append(data(row))
-
 
 
 def row_in_fishes(number):
