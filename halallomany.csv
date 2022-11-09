@@ -1,0 +1,10 @@
+﻿Name;MinMass;MaxMass;MinLength;MaxLength;IsEndangered
+Ponty;2,0;20,0;0,3;1,0;N
+Amur;4,0;30,0;0,1;0,8;N
+Csuka;5,0;8,0;0,2;0,5;N
+Karikakeszeg;0,5;1,0;0,2;0,3;N
+Széles kárász;1,0;3,0;0,2;0,3;N
+Sügér;0,3;3,0;0,3;0,5;N
+Vágótok;30,0;80,0;0,5;1,0;Y
+Kecsege;6,0;7,0;0,5;1,0;Y
+Nyúldomolykó;0,5;1,0;0,2;0,2;N
