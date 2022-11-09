@@ -2,7 +2,7 @@ import random
 import math
 
 def wich_fish():
-    return random.choice('Ponty', 'Csuka', 'Harcsa')
+    return random.choice(['Ponty', 'Csuka', 'Harcsa'])
 
 def golden_fish():
     print("Gratulálunk!!!")
@@ -22,12 +22,10 @@ def catch():
     if percent <= 50:
         return 'semmi'
     elif percent > 50 and percent <= 99:
-        wich_fish()
+        return wich_fish()
     elif percent == 100:
         golden_fish()
         return 'aranyhal'
-
-golden_fish2()
 
 # asd = random.uniform(6, 7)
 # asd = round(asd, 2)
