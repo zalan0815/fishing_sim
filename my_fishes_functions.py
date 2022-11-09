@@ -1,6 +1,7 @@
 from data import data2
+from users import user
 
-file = 'halaim.csv'
+file = user()
 
 my_fishes = []
 
@@ -85,5 +86,5 @@ read_file()
 # biggest_fish('súly')
 # biggest_fish('hossz')
 # #search_by_name()
-# all_of_my_fishes()
+all_of_my_fishes()
 #eat_fish()
