@@ -1,9 +1,6 @@
 import random
 import math
 
-def wich_fish():
-    return random.choice()
-
 def golden_fish():
     print("Gratulálunk!!!")
     print("Kifogtál egy aranyhalat!")
@@ -22,12 +19,16 @@ def catch():
     if percent <= 50:
         return 'semmi'
     elif percent > 50 and percent <= 99:
-        wich_fish()
+        return 'hal'
     elif percent == 100:
+        golden_fish()
         return 'aranyhal'
-
-golden_fish2()
-
+        
 # asd = random.uniform(6, 7)
 # asd = round(asd, 2)
 # print(asd)
+
+
+
+
+            
