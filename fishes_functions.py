@@ -46,7 +46,6 @@ def new_fish():
 def row_in_fishes(number):
     return f'{fishes[number].name};{fishes[number].min_mass};{fishes[number].max_mass};{fishes[number].min_length};{fishes[number].max_length};{fishes[number].endangered}'
 
-print(row_in_fishes(0))
         
 
 
