@@ -33,17 +33,17 @@ def search_by_name():
     name = input('Halfaj(részlet) keresése: ')
     for f in my_fishes:
         if name.lower() in r.name.lower():
-            print(f'{f.name} ({f.mass}kg, {f.length}cm)')
+            print(f'{f.name} ({f.mass}kg, {f.length}m)')
     input('\n')
 
 def all_of_my_fishes():
     for f in my_fishes:
-        print(f'{f.name} ({f.mass}kg, {f.length}cm)')
+        print(f'{f.name} ({f.mass}kg, {f.length}m)')
         
 def eat_fish():
     count = 1
     for f in my_fishes:
-        print(f'{count} - {f.name} ({f.mass}kg, {f.length}cm)')
+        print(f'{count} - {f.name} ({f.mass}kg, {f.length}m)')
         count += 1
     my_fishes.pop(int(input('Választás: ')) - 1)
     write_file()
@@ -79,7 +79,7 @@ def biggest_fish(criterion):
             if my_fishes[i].length == longest:
                 max_mass_indexes.append(i)
         for i in max_mass_indexes:
-            print(f'{my_fishes[i].name} - {my_fishes[i].length}cm')
+            print(f'{my_fishes[i].name} - {my_fishes[i].length}m')
 
 read_file()
 # biggest_fish('súly')
