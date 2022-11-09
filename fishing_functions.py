@@ -111,46 +111,16 @@ def throw_in():
         
         
 
+for i in range (1 , 6):
+    input('ENTER a következő bedobáshoz...')
+    print(i)
+    throw_in()
+    print('Vödör tartalma:')
+    for fish in bucket:
+        print(f'Faj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} | Hossz: {get_float(fish, 2)}')
+    print()
 
-input('ENTER a következő bedobáshoz...')
-print('1')
-throw_in()
-print('Vödör tartalma:')
-for fish in bucket:
-    print(f'\t{fish}')
-print()
-input('ENTER a következő bedobáshoz...')
 
-print('2')
-throw_in()
-print('Vödör tartalma:')
-for fish in bucket:
-    print(f'\t{fish}')
-print()
-input('ENTER a következő bedobáshoz...')
-
-print('3')
-throw_in()
-print('Vödör tartalma:')
-for fish in bucket:
-    print(f'\t{fish}')
-print()
-input('ENTER a következő bedobáshoz...')
-
-print('4')
-throw_in()
-print('Vödör tartalma:')
-for fish in bucket:
-    print(f'\t{fish}')
-print()
-input('ENTER a következő bedobáshoz...')
-
-print('5')
-throw_in()
-print('Vödör tartalma:')
-for fish in bucket:
-    print(f'\t{fish}')
-print()
 
 
 
