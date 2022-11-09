@@ -5,6 +5,8 @@ import random
 import math
 
 
+
+
 def animation(amount: int):
     time_since_throw = 0
     dot_amount = 0
@@ -119,6 +121,8 @@ for i in range (1 , 6):
     for fish in bucket:
         print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} | Hossz: {get_float(fish, 2)}')
     print()
+
+
 
 
 #dfasf
