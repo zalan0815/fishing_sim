@@ -24,6 +24,7 @@ def catch():
     elif percent > 50 and percent <= 99:
         wich_fish()
     elif percent == 100:
+        golden_fish()
         return 'aranyhal'
 
 golden_fish2()
