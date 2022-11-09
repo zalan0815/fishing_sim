@@ -32,7 +32,7 @@ def store_fishes(fishes):
 def search_by_name():
     name = input('Halfaj(részlet) keresése: ')
     for f in my_fishes:
-        if name.lower() in r.name.lower():
+        if name.lower() in f.name.lower():
             print(f'{f.name} ({f.mass}kg, {f.length}m)')
     input('\n')
 
@@ -86,4 +86,4 @@ read_file()
 # biggest_fish('hossz')
 # #search_by_name()
 # all_of_my_fishes()
-eat_fish()
+#eat_fish()
