@@ -1,6 +1,8 @@
 from lake_functions import *
+from fishes_functions import row_in_fishes, fishes
 import time
 import random
+import math
 
 
 def animation(amount: int):
@@ -28,21 +30,67 @@ def animation(amount: int):
 
 bucket = []
 
-mass = 0
-length = 0
-endangered = False
 
-def manage_fish_fate(mass: float, length: float, endangered: bool):
-    print(f'{catch()}!')
+def get_float(row: str, data_number: int):
+    return float(row.split(';')[data_number].replace(',', '.'))
+
+def get_string(row: str, data_number: int):
+    return row.split(';')[data_number]
+
+
+
+
+
+
+def manage_fish():
+
+
+    row_number = random.randint(0, len(fishes)-1)
+    # print(row_number)
+    # print(row_in_fishes(row_number))
+
+    fish_name = get_string(row_in_fishes(row_number), 0)
+
+    fish_mass = round(random.uniform(get_float(row_in_fishes(row_number), 1), get_float(row_in_fishes(row_number), 2)), 2)
+
+    fish_length = round(random.uniform(get_float(row_in_fishes(row_number), 3), get_float(row_in_fishes(row_number), 4)), 2)
+
+    fish_endangered = False
+
+    if get_string(row_in_fishes(row_number), 5) == 'N':
+        fish_endangered = False
+    else:
+        fish_endangered = True
+
+
+    print(f'{fish_name}!')
     print()
-    print(f'Tömeg: {15} kg')
-    print(f'Hossz: {1} m')
-    print(f'Védettségi státusz: {0}')
+    print(f'Tömeg: {fish_mass} kg')
+    print(f'Hossz: {fish_length} m')
+    endangered_status_converted = ''
+    if fish_endangered == False:
+        endangered_status_converted = 'Nem fenyegetett'
+    else:
+        endangered_status_converted = 'Védett'
+    print(f'Védettségi státusz: {endangered_status_converted}')
     print()
+
+
+
     print('Mit fogsz csinálni a hallal?')
     fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
     while fish_fate != 'v' and fish_fate != 'e':
         fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
+    
+
+    converted_row_to_bucket = f'{fish_name};{fish_mass};{fish_length}'
+
+    if fish_fate == 'e':
+        if fish_endangered == True:
+            print('Nem rakhatsz el védett halat! Megbüntetett a halőr!')
+            print('Halőr: Ejnye-bejnye! Többet ilyet meg ne lássak!')
+        else:
+            bucket.append(converted_row_to_bucket)
 
 def throw_in():
     print('Bedobtad a csalit.\nVárj a kapásra!')
@@ -59,10 +107,51 @@ def throw_in():
     elif current_catch == 'aranyhal':
         print('Aranyhal!')
     else:
+        manage_fish()
+        
+        
 
-        manage_fish_fate(0.5, 0.1, False)
 
+input('ENTER a következő bedobáshoz...')
+print('1')
 throw_in()
+print('Vödör tartalma:')
+for fish in bucket:
+    print(f'\t{fish}')
+print()
+input('ENTER a következő bedobáshoz...')
+
+print('2')
+throw_in()
+print('Vödör tartalma:')
+for fish in bucket:
+    print(f'\t{fish}')
+print()
+input('ENTER a következő bedobáshoz...')
+
+print('3')
+throw_in()
+print('Vödör tartalma:')
+for fish in bucket:
+    print(f'\t{fish}')
+print()
+input('ENTER a következő bedobáshoz...')
+
+print('4')
+throw_in()
+print('Vödör tartalma:')
+for fish in bucket:
+    print(f'\t{fish}')
+print()
+input('ENTER a következő bedobáshoz...')
+
+print('5')
+throw_in()
+print('Vödör tartalma:')
+for fish in bucket:
+    print(f'\t{fish}')
+print()
+
 
 
 
