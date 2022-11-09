@@ -16,6 +16,14 @@ def check(word):
     except ValueError:
         return False
 
+def write_file():
+    f = open('halallomany.csv', 'w', encoding='UTF-8')
+    f.write('Name;MinMass;MaxMass;MinLength;MaxLength;IsEndangered\n')
+    for d in fishes:
+        row = f'{d.name};{d.min_mass};{d.max_mass};{d.min_length};{d.max_length};{d.endangered};\n'
+        f.write(row)
+    f.close()
+
 def new_fish():
     name = input('Hal neve: ')
     min_mass = input('Hal minimum sulya: ')
@@ -32,8 +40,6 @@ def new_fish():
         max_mass = input('Hal maximum hossza: ')
     endangered = input('Hal védettsége: ')
     
-    
-    
     row = f'{name};{min_mass};{max_mass};{min_length};{max_length};{endangered}\n'
     f = open('halallomany.csv', 'a', encoding='UTF-8')
     f.write(row)
@@ -41,10 +47,39 @@ def new_fish():
 
     fishes.append(data(row))
 
-new_fish()
 
+def row_in_fishes(number):
+    return f'{fishes[number].name};{fishes[number].min_mass};{fishes[number].max_mass};{fishes[number].min_length};{fishes[number].max_length};{fishes[number].endangered}'
 
+def modify_fish():
+    name = input('Név: ')
+    for d in fishes:
+        if d.name.lower() == name.lower():
+            d.min_mass = input('Minimum súly: ')
+            while check(d.min_mass) == False:
+                d.min_mass = input('Minimum súly: ')
+            d.max_mass = input('Maximum súly: ')
+            while check(d.max_mass) == False:
+                d.max_mass = input('Maximum súly: ')
+            d.min_length = input('Minimum hossz: ')
+            while check(d.min_length) == False:
+                d.min_length = input('Minimum hossz: ')
+            d.max_length = input('Maximum hossz: ')
+            while check(d.max_length) == False:
+                d.max_length = input('Maximum hossz: ')
+            d.endangered = input('Védettségi státusz: ')
+            write_file()
+            return
+        
+    print('Ilyen hal nincsen')
 
+def delete_fish():
+    name = input('Név: ')
+    for d in fishes:
+        if d.name.lower() == name.lower():
+            fishes.remove(d)
+            write_file()
+            return
+    print('Ilyen hal nincs')
 
-
-
+delete_fish()

@@ -33,7 +33,16 @@ length = 0
 endangered = False
 
 def manage_fish_fate(mass: float, length: float, endangered: bool):
-    pass
+    print(f'{catch()}!')
+    print()
+    print(f'Tömeg: {15} kg')
+    print(f'Hossz: {1} m')
+    print(f'Védettségi státusz: {0}')
+    print()
+    print('Mit fogsz csinálni a hallal?')
+    fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
+    while fish_fate != 'v' and fish_fate != 'e':
+        fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
 
 def throw_in():
     print('Bedobtad a csalit.\nVárj a kapásra!')
@@ -50,20 +59,12 @@ def throw_in():
     elif current_catch == 'aranyhal':
         print('Aranyhal!')
     else:
-        print(f'{catch()}!')
-        print()
-        print(f'Tömeg: {15} kg')
-        print(f'Hossz: {1} m')
-        print(f'Védettségi státusz: {0}')
-        print()
-        print('Mit fogsz csinálni a hallal?')
-        fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
-        while fish_fate != 'v' and fish_fate != 'e':
-            fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
+
+        manage_fish_fate(0.5, 0.1, False)
 
 throw_in()
 
-    
+
 
     # current_catch = catch()
 
