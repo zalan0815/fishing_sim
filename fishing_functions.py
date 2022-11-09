@@ -117,7 +117,7 @@ for i in range (1 , 6):
     throw_in()
     print('Vödör tartalma:')
     for fish in bucket:
-        print(f'Faj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} | Hossz: {get_float(fish, 2)}')
+        print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} | Hossz: {get_float(fish, 2)}')
     print()
 
 
