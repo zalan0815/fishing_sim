@@ -10,6 +10,7 @@ Elindíthatunk egy 5 dobásból álló sorozatot.
 
 ## Halállomány
 
+- Hazavitt halakat kilistázhatjuk.
 - Telepíthetünk be új halfajokat.
 - Teljesen kihalászhatunk egy adott fajt.
 - Halfaj tulajdonságait módosíthatjuk.
