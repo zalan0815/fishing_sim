@@ -16,6 +16,16 @@ Elindíthatunk egy 5 dobásból álló sorozatot.
 - Halfaj tulajdonságait módosíthatjuk.
 - Összes halfajt kilistázhatjuk.
 
+## Saját halaim
+- Saját halak neve, súlya és mérete szerepel itt
+- Név szerint lehet keresni
+- Kiiratni a rekord hosszt
+- Kiiratni a rekord súlyt
+
 ## Új felhasználó
 
-- Új felhasználó miatt a saját halaim törlődnek.
+- Felhasználó adatainak mentése külön csv fájlba
+A felhasználó adatai tartalmazza a hazavitt halakat
+- Felhasználó adatainak betöltése
+- Új felhasználó létrehozása 
+- Felhasználó törlése
