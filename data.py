@@ -12,6 +12,11 @@ class data:
         self.max_length = float(data[4].replace(',', '.'))
         self.endangered = data[5]
 
-
+class data2:
+    def __init__(self, row: str):
+        data = row.split(';')
+        self.name = data[0]
+        self.mass = float(data[1].replace(',', '.'))
+        self.length = float(data[2].replace(',', '.'))
 
 
