@@ -2,7 +2,7 @@ import random
 import math
 
 def wich_fish():
-    return random.choice()
+    return random.choice('Ponty', 'Csuka', 'Harcsa')
 
 def golden_fish():
     print("Gratulálunk!!!")
