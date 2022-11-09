@@ -73,4 +73,13 @@ def modify_fish():
         
     print('Ilyen hal nincsen')
 
-modify_fish()
+def delete_fish():
+    name = input('Név: ')
+    for d in fishes:
+        if d.name.lower() == name.lower():
+            fishes.remove(d)
+            write_file()
+            return
+    print('Ilyen hal nincs')
+
+delete_fish()
