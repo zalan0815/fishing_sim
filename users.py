@@ -35,7 +35,6 @@ def list_users():
         print(f'{count} - {u}')
         count += 1
     print(f'\n{count} - Új felhasználó regisztrálása')
-    print(f'\n0 - Kilépés')
     print("--------------------------------------------------------------------------------")
 
 def new_user():
@@ -96,8 +95,6 @@ def user():
     os.system("cls")
     list_users()
     choice = input('Választás: ')
-    if choice == '0':
-        return
     while check(choice) == False:
         os.system("cls")
         print(felirat)
