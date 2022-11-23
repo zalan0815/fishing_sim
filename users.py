@@ -2,8 +2,6 @@ import os
 import time
 from fishes_functions import check
 
-
-
 files = os.listdir()
 files.pop(0)
 files.pop(len(files) - 1)
@@ -55,4 +53,4 @@ def user():
     if check(choice) > 0 and check(choice) <= len(users):
         return f'{users[int(choice) - 1]}.csv'
     elif check(choice) > len(users):
-        new_user()
+        return new_user()
