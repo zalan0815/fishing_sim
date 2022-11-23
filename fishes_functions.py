@@ -84,4 +84,4 @@ def list_fishes():
         print(f'{d.name} ({d.min_mass}kg - {d.max_mass}kg, {d.min_length}m - {d.max_length}m, {endangered})')
 
 
-new_fish()
+#new_fish()
