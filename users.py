@@ -24,7 +24,7 @@ def list_users():
     os.system("cls")
     for f in files:
         type = f.split('.')
-        if (type[1] == 'csv' and type[0] != 'halallomany') and (type[1] == 'csv' and type[0] != 'jelszok'):
+        if (type[1] == 'csv' and type[0] != 'halallomany') and (type[1] == 'csv' and type[0] != 'jelszavak'):
             users.append(type[0])
 
     count = 1
@@ -62,13 +62,13 @@ def new_user():
     f.write('Name;Mass;Length\n')
     f.close()
 
-    f = open(f'jelszok.csv', 'a', encoding='UTF-8')
+    f = open(f'jelszavak.csv', 'a', encoding='UTF-8')
     f.write(f'{user_name};{password}\n')
     f.close()
     return f'{user_name}.csv'
 
 def login(user_name, choice):
-    f = open(f'jelszok.csv', 'r', encoding='UTF-8')
+    f = open(f'jelszavak.csv', 'r', encoding='UTF-8')
     for row in f:
         data = row.strip().split(';')
         if user_name == data[0]:
