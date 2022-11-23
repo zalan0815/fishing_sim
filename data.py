@@ -14,7 +14,7 @@ class data:
 
 class data2:
     def __init__(self, row: str):
-        if row == "":
+        if row != "":
             data = row.split(';')
             self.name = data[0]
             self.mass = float(data[1].replace(',', '.'))

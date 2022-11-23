@@ -1,8 +1,9 @@
 from lake_functions import *
 from fishes_functions import row_in_fishes, fishes
+from my_fishes_functions import store_fishes
 import time
 import random
-import math
+import os
 
 
 
@@ -10,9 +11,6 @@ import math
 def animation(amount: int): #kiírja egymás után hogy horgászás folyamatban amount-szor
     time_since_throw = 0
     dot_amount = 0
-
-    # print(f'amount: {amount}')
-    # print(f'time_since_throw: {time_since_throw}')
 
     while time_since_throw < amount:
         time.sleep(1)
@@ -48,8 +46,6 @@ def manage_fish():
 
 
     row_number = random.randint(0, len(fishes)-1) # Kisorsol egy számot
-    # print(row_number)
-    # print(row_in_fishes(row_number))
 
     fish_name = get_string(row_in_fishes(row_number), 0) # A fishes(class) listából a kisorsolt számú hal nevét visszaadja
 
@@ -80,22 +76,26 @@ def manage_fish():
 
 
     print('Mit fogsz csinálni a hallal?')
-    fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()      # Felhaszáló döntése a hal sorsáról
+    fish_fate = input('Visszaengeded[V] / Elrakod[E] | Választás: ').lower()     # Felhaszáló döntése a hal sorsáról
     while fish_fate != 'v' and fish_fate != 'e':
-        fish_fate = input('Visszaengeded[V] / Elrakod[E]').lower()
+        fish_fate = input('Visszaengeded[V] / Elrakod[E] | Választás: ').lower()
     
 
     converted_row_to_bucket = f'{fish_name};{fish_mass};{fish_length}' # A hal adatait átalakítja kettőspontokkal elválasztott sorrá
 
     if fish_fate == 'e':
-        if fish_endangered == True:                                         # Ha a felhasználó elrakja (ha visszaengedi nem történik seemmi)
+        if fish_endangered == True:  
+            print()                                       # Ha a felhasználó elrakja (ha visszaengedi nem történik seemmi)
             print('Nem rakhatsz el védett halat! Megbüntetett a halőr!')    
             print('Halőr: Ejnye-bejnye! Többet ilyet meg ne lássak!')
+            print()
         else:
             bucket.append(converted_row_to_bucket)
 
 def throw_in():
+    print()
     print('Bedobtad a csalit.\nVárj a kapásra!')
+    print()
     time_to_catch = random.randint(5, 15)           # Csali bedobása, idő sorsolása
     animation(time_to_catch)
     
@@ -103,37 +103,41 @@ def throw_in():
     
     
     print()
-    print('KAPÁSOD VAN!!!')
+    print('\033[93mKAPÁSOD VAN!!! \033[0m')
     print()                                         #Kapás kiírása
     print('Ezt fogtad:')
     current_catch = catch()
     if current_catch == 'semmi':
         print(random.choice(['Hínár!', 'Nem fogtál semmit!', 'Gumicsizma!', 'Biciklikerék!', 'AK-47-es gépkarabély! (Hívd a rendőrséget!)'])) # Ha nem fogott a felhasználó halat
     elif current_catch == 'aranyhal':
-        print('Aranyhal!')
+        print('\033[33mAranyhal!  \033[0m')
+        print()
+        golden_fish()
+        golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
+        while golden_fish_choice != 'i' and golden_fish_choice != 'n':
+            golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
+        if golden_fish_choice == 'i':
+            golden_fish2()
+        else:
+            print('Az aranyhalat nem engeddet vissza.')
+            print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
+            print('Ez meg fogja nehezíteni a horgászatot a számodra.')
     else:
         manage_fish() # Ha fogott a felhasználó halat
         
         
 
 for i in range (1 , 6):
-    input('ENTER a következő bedobáshoz...')
-    print(i)
+    input('ENTER a bedobáshoz...')
+    os.system('cls')
+    print(f'{i}. Bedobás')
     throw_in()
     print('Vödör tartalma:')
+    print()
     for fish in bucket:
-        print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} m | Hossz: {get_float(fish, 2)} kg')
+        print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} kg | Hossz: {get_float(fish, 2)} m')
         print()
 
 
 
-
-#dfasf
-
-
-
-    # current_catch = catch()
-
-
-    # print(current_catch)
-
+store_fishes(bucket) # vödör fájlba írása3
