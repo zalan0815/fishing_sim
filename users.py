@@ -99,11 +99,9 @@ def user():
     while check(choice) == False:
         os.system("cls")
         print(felirat)
-        time.sleep(2)
-        user()
+        input()
+        return user()
     if check(choice) > 0 and check(choice) <= len(users):
         return login(users[int(choice)-1], choice)
     elif check(choice) > len(users):
         return new_user()
-
-user()
