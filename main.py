@@ -1,9 +1,34 @@
 from fishing_functions import *
 from my_fishes_functions import *
+from fishes_functions import *
 import os
 
+def sub_menu_1(submenu_1_user_choice):
+    if submenu_1_user_choice == '1':
+        list_fishes()
+    elif submenu_1_user_choice == '2':
+        new_fish()
+    elif submenu_1_user_choice == '3':
+        modify_fish()
+    elif submenu_1_user_choice == '4':
+        delete_fish()
+    # else:
+    #     sub_menu_1(submenu_1_user_choice)
+
+def sub_menu_2(submenu_2_user_choice):
+    if submenu_2_user_choice == '1':
+        search_by_name()
+    elif submenu_2_user_choice == '2':
+        all_of_my_fishes()
+    elif submenu_2_user_choice == '3':
+        biggest_fish('súly')
+    elif submenu_2_user_choice == '4':
+        biggest_fish('hossz')
+    elif submenu_2_user_choice == '5':
+        eat_fish()
+
 def menu():
-    print('Üdvözlünk a \033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.0.0\033[0m - ban!')
+    print('Üdvözlünk a \033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m - ban!')
     print('Válasszon menüpontot!')
     print('1. Játék')
     print('2. Halállomány beállítása')
@@ -15,7 +40,15 @@ def menu():
     if menu_user_choice == '1':
         start_game()
     elif menu_user_choice == '2':
-        pass   
+        print('Válasszon menüpontot!')
+        print('1. Halak kilistázása')
+        print('2. Új hal hozzáadása')
+        print('3. Hal módosítása')
+        print('4. Hal törlése')
+        submenu_1_user_choice = input('Választás: ')
+
+        sub_menu_1(submenu_1_user_choice)
+        
     elif menu_user_choice == '3':
         print('Válasszon menüpontot!')
         print('1. Keresés (név alapján)')
@@ -25,21 +58,12 @@ def menu():
         print('5. Hal elfogyasztása')
         submenu_2_user_choice = input('Választás: ')
 
-        if submenu_2_user_choice == '1':
-            search_by_name()
-        elif submenu_2_user_choice == '2':
-            all_of_my_fishes()
-        elif submenu_2_user_choice == '3':
-            biggest_fish('súly')
-        elif submenu_2_user_choice == '4':
-            biggest_fish('hossz')
-        elif submenu_2_user_choice == '5':
-            eat_fish()   
-    input()
+        sub_menu_2(submenu_2_user_choice)
+
+    input('ENTER a menübe való visszatéréshez...')
     os.system('cls')     
     menu()
 menu()
     
 
-
-
+ 
