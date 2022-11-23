@@ -96,6 +96,8 @@ def user():
     os.system("cls")
     list_users()
     choice = input('Választás: ')
+    if choice == '0':
+        return
     while check(choice) == False:
         os.system("cls")
         print(felirat)
@@ -105,3 +107,5 @@ def user():
         return login(users[int(choice)-1], choice)
     elif check(choice) > len(users):
         return new_user()
+
+#user()
