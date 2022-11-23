@@ -41,6 +41,7 @@ def new_user():
     f = open(f'{user_name}.csv', 'w', encoding='UTF-8')
     f.write('Name;Mass;Length\n')
     f.close()
+    return f'{user_name}.csv'
 
 def user():
     os.system("cls")
@@ -55,4 +56,3 @@ def user():
         return f'{users[int(choice) - 1]}.csv'
     elif check(choice) > len(users):
         new_user()
-user()
