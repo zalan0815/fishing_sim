@@ -1,5 +1,5 @@
 from lake_functions import *
-from fishes_functions import row_in_fishes, fishes
+from fishes_functions import row_in_fishes, fishes, check
 from my_fishes_functions import store_fishes
 import time
 import random
@@ -103,36 +103,41 @@ def throw_in():
     
     
     print()
-    print('\033[1;31;40mKAPÁSOD VAN!!! \033[0m')
+    print('\033[1;31;40mKAPÁSOD VAN!!!\033[0m')
     print()
     print('Fáraszd ki a halat:')
     random_number1 = random.randint(0, 10)
     random_number2 = random.randint(0, 10)
     random_answer = random_number1 * random_number2
-    question_user_answer = int(input(f'Mennyi {random_number1} * {random_number2}? Eredmény: '))
-    if random_answer == question_user_answer:
-        print()
-        print('Ezt fogtad:')
-        current_catch = catch()
-        if current_catch == 'semmi':
-            print('\033[1;37;40m' + random.choice(['Hínár!', 'Nem fogtál semmit!', 'Gumicsizma!', 'Biciklikerék!', 'AK-47-es gépkarabély! (Hívd a rendőrséget!)']) + '\033[0m') # Ha nem fogott a felhasználó halat
-        elif current_catch == 'aranyhal':
-            print('\033[33mAranyhal!  \033[0m')
+    try:
+        question_user_answer = int(input(f'Mennyi {random_number1} * {random_number2}? Eredmény: '))
+        if random_answer == question_user_answer:
             print()
-            golden_fish()
-            golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
-            while golden_fish_choice != 'i' and golden_fish_choice != 'n':
+            print('Ezt fogtad:')
+            current_catch = catch()
+            if current_catch == 'semmi':
+                print('\033[1;37;40m' + random.choice(['Hínár!', 'Nem fogtál semmit!', 'Gumicsizma!', 'Biciklikerék!', 'AK-47-es gépkarabély! (Hívd a rendőrséget!)']) + '\033[0m') # Ha nem fogott a felhasználó halat
+            elif current_catch == 'aranyhal':
+                print('\033[33mAranyhal!  \033[0m')
+                print()
+                golden_fish()
                 golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
-            if golden_fish_choice == 'i':
-                golden_fish2()
+                while golden_fish_choice != 'i' and golden_fish_choice != 'n':
+                    golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
+                if golden_fish_choice == 'i':
+                    golden_fish2()
+                else:
+                    print('Az aranyhalat nem engeddet vissza.')
+                    print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
+                    print('Ez meg fogja nehezíteni a horgászatot a számodra.')
             else:
-                print('Az aranyhalat nem engeddet vissza.')
-                print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
-                print('Ez meg fogja nehezíteni a horgászatot a számodra.')
+                manage_fish() # Ha fogott a felhasználó halat
         else:
-            manage_fish() # Ha fogott a felhasználó halat
-    else:
-        print('A hal elúszott...')
+            print('\033[1;31;40mA hal elúszott...\033[0m')
+    except ValueError:
+        print('\033[1;31;40mA hal elúszott...\033[0m')
+    
+    
     
         
         
