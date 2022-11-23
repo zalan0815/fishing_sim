@@ -87,7 +87,7 @@ def modify_fish():
             d.max_length = input('Maximum hossz: ')
             while check(d.max_length) == False:
                 d.max_length = input('Maximum hossz: ')
-            d.endangered = input('Védettségi státusz: ')
+            d.endangered = input('Védettségi státusz: ').upper()
             write_file()
             return
 
@@ -116,4 +116,4 @@ def list_fishes():
         print(f'{d.name} ({d.min_mass}kg - {d.max_mass}kg, {d.min_length}m - {d.max_length}m, {endangered})')
 
 
-modify_fish()
+
