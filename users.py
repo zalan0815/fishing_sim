@@ -83,7 +83,7 @@ def login(user_name, choice):
             while pw != data[1]:
                 print(wrong_password)
                 try_again = input('Újra próbálod? (I/N): ')
-                if try_again == 'N':
+                if try_again == 'N' or try_again == 'n':
                     user()
                 pw = input('Jelszó: ')
             f.close()
@@ -103,4 +103,4 @@ def user():
     elif check(choice) > len(users):
         return new_user()
 
-# user()
+user()
