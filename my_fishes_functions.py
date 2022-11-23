@@ -52,7 +52,7 @@ def eat_fish():
 
 def biggest_fish(criterion):
     if criterion == 'súly':
-        max_mass = my_fishes[1].mass
+        max_mass = my_fishes[0].mass
         index = 1
         for i in range(1, len(my_fishes)):
             if my_fishes[i].mass > max_mass:
@@ -68,7 +68,7 @@ def biggest_fish(criterion):
 
 
     if criterion == 'hossz':
-        longest = my_fishes[1].length
+        longest = my_fishes[0].length
         index = 1
         for i in range(1, len(my_fishes)):
             if my_fishes[i].length > longest:
