@@ -77,15 +77,23 @@ def modify_fish():
         if d.name.lower() == name.lower():
             d.min_mass = input('Minimum súly: ')
             while check(d.min_mass) == False:
+                print(felirat)
+                time.sleep(2)
                 d.min_mass = input('Minimum súly: ')
             d.max_mass = input('Maximum súly: ')
             while check(d.max_mass) == False:
+                print(felirat)
+                time.sleep(2)
                 d.max_mass = input('Maximum súly: ')
             d.min_length = input('Minimum hossz: ')
             while check(d.min_length) == False:
+                print(felirat)
+                time.sleep(2)
                 d.min_length = input('Minimum hossz: ')
             d.max_length = input('Maximum hossz: ')
             while check(d.max_length) == False:
+                print(felirat)
+                time.sleep(2)
                 d.max_length = input('Maximum hossz: ')
             d.endangered = input('Védettségi státusz: ').upper()
             write_file()
@@ -117,3 +125,4 @@ def list_fishes():
 
 
 
+modify_fish()
