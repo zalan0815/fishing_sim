@@ -46,13 +46,13 @@ def new_fish():
     while check(min_length) == False:
         print(felirat)
         time.sleep(2)
-        max_mass = input('Hal minimum hossza: ')
+        min_length = input('Hal minimum hossza: ')
     max_length = input('Hal maximum hossza: ')
     while check(max_length) == False:
         print(felirat)
         time.sleep(2)
-        max_mass = input('Hal maximum hossza: ')
-    endangered = input('Hal védettsége: ')
+        max_length = input('Hal maximum hossza: ')
+    endangered = input('Hal védettsége (Y/N): ').upper()
     
     
     
@@ -63,16 +63,8 @@ def new_fish():
 
     fishes.append(data(row))
 
-
-
 def row_in_fishes(number):
     return f'{fishes[number].name};{fishes[number].min_mass};{fishes[number].max_mass};{fishes[number].min_length};{fishes[number].max_length};{fishes[number].endangered}'
-
-        
-
-
-
-
 
 def list_fishes():
     endangered = ''
@@ -84,4 +76,4 @@ def list_fishes():
         print(f'{d.name} ({d.min_mass}kg - {d.max_mass}kg, {d.min_length}m - {d.max_length}m, {endangered})')
 
 
-# new_fish()
+# #new_fish()
