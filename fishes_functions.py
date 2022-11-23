@@ -60,7 +60,9 @@ def new_fish():
         print(felirat)
         time.sleep(2)
         max_length = input('Hal maximum hossza: ')
-    endangered = input('Hal védettsége (Y/N): ').upper()
+    endangered = input('Hal védettsége (I/N): ').upper()
+    if endangered == 'I':
+        endangered = 'Y'
     
     
     
@@ -95,7 +97,9 @@ def modify_fish():
                 print(felirat)
                 time.sleep(2)
                 d.max_length = input('Maximum hossz: ')
-            d.endangered = input('Védettségi státusz: ').upper()
+            d.endangered = input('Védettségi státusz (I/N): ').upper()
+            if d.endangered == 'I':
+                d.endangered = 'Y'
             write_file()
             return
 
@@ -122,3 +126,4 @@ def list_fishes():
         elif d.endangered == 'Y':
             endangered = 'védett'
         print(f'{d.name} ({d.min_mass}kg - {d.max_mass}kg, {d.min_length}m - {d.max_length}m, {endangered})')
+
