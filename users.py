@@ -35,7 +35,6 @@ def list_users():
         print(f'{count} - {u}')
         count += 1
     print(f'\n{count} - Új felhasználó regisztrálása')
-    print(f'\n0 - Kilépés')
     print("--------------------------------------------------------------------------------")
 
 def new_user():
@@ -83,9 +82,12 @@ def login(user_name, choice):
             while pw != data[1]:
                 print(wrong_password)
                 try_again = input('Újra próbálod? (I/N): ')
-                if try_again == 'N':
+                while try_again.upper() != 'N' and try_again.upper() != 'I':
+                    try_again = input('Újra próbálod? (I/N): ')
+                if try_again.upper() == 'N':
                     user()
-                pw = input('Jelszó: ')
+                else:
+                    pw = input('Jelszó: ')
             f.close()
             return f'{users[int(choice) - 1]}.csv'
 
@@ -96,11 +98,11 @@ def user():
     while check(choice) == False:
         os.system("cls")
         print(felirat)
-        time.sleep(2)
-        user()
+        input()
+        return user()
     if check(choice) > 0 and check(choice) <= len(users):
         return login(users[int(choice)-1], choice)
     elif check(choice) > len(users):
         return new_user()
 
-# user()
+#user()
