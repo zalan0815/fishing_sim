@@ -127,7 +127,7 @@ def throw_in():
                 if golden_fish_choice == 'i':
                     golden_fish2()
                 else:
-                    print('Az aranyhalat nem engeddet vissza.')
+                    print('Az aranyhalat nem engedted vissza.')
                     print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
                     print('Ez meg fogja nehezíteni a horgászatot a számodra.')
             else:
@@ -140,19 +140,16 @@ def throw_in():
     
     
         
-        
-
-for i in range (1 , 6):
-    input('ENTER a bedobáshoz...')
-    os.system('cls')
-    print(f'{i}. Bedobás')
-    throw_in()
-    print('Vödör tartalma:')
-    print()
-    for fish in bucket:
-        print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} kg | Hossz: {get_float(fish, 2)} m')
+def start_game():
+    for i in range (1 , 6):
+        input('ENTER a bedobáshoz...')
+        os.system('cls')
+        print(f'{i}. Bedobás')
+        throw_in()
+        print('Vödör tartalma:')
         print()
+        for fish in bucket:
+            print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} kg | Hossz: {get_float(fish, 2)} m')
+            print()
+    store_fishes(bucket) # vödör fájlba írása3
 
-
-
-store_fishes(bucket) # vödör fájlba írása3
