@@ -83,9 +83,12 @@ def login(user_name, choice):
             while pw != data[1]:
                 print(wrong_password)
                 try_again = input('Újra próbálod? (I/N): ')
-                if try_again == 'N' or try_again == 'n':
+                while try_again.upper() != 'N' and try_again.upper() != 'I':
+                    try_again = input('Újra próbálod? (I/N): ')
+                if try_again.upper() == 'N':
                     user()
-                pw = input('Jelszó: ')
+                else:
+                    pw = input('Jelszó: ')
             f.close()
             return f'{users[int(choice) - 1]}.csv'
 
