@@ -65,4 +65,3 @@ def user():
         return f'{users[int(choice) - 1]}.csv'
     elif check(choice) > len(users):
         new_user()
-user()
