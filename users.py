@@ -56,6 +56,13 @@ def new_user():
     if user_name == '0':
         user()
     password = str(input("Jelszó: "))
+    password2 = str(input("Jelszó megerősítése: "))
+    while password != password2:
+        print(wrong_password)
+        time.sleep(2)
+        os.system("cls")
+        password = str(input("Jelszó: "))
+        password2 = str(input("Jelszó megerősítése: "))
     print("Sikeresen létrehoztuk az új profilt!")
     print("--------------------------------------------------------------------------------")
     f = open(f'{user_name}.csv', 'w', encoding='UTF-8')
