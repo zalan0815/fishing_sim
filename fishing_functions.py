@@ -61,16 +61,16 @@ def manage_fish():
         fish_endangered = True
 
 
-    print(f'{fish_name}!')
+    print(f'\033[1;37;40m{fish_name}!\033[0m')
     print()
-    print(f'Tömeg: {fish_mass} kg')
-    print(f'Hossz: {fish_length} m')
+    print('Tömeg: ' + f'\033[1;37;40m{fish_mass} kg\033[0m')
+    print('Hossz: ' + f'\033[1;37;40m{fish_length} m\033[0m')
     endangered_status_converted = ''                                #Kiírja a hal adatait
     if fish_endangered == False:
         endangered_status_converted = 'Nem fenyegetett'
     else:
         endangered_status_converted = 'Védett'
-    print(f'Védettségi státusz: {endangered_status_converted}')
+    print(f'Védettségi státusz: \033[1;37;40m{endangered_status_converted}\033[0m')
     print()
 
 
@@ -86,8 +86,8 @@ def manage_fish():
     if fish_fate == 'e':
         if fish_endangered == True:  
             print()                                       # Ha a felhasználó elrakja (ha visszaengedi nem történik seemmi)
-            print('Nem rakhatsz el védett halat! Megbüntetett a halőr!')    
-            print('Halőr: Ejnye-bejnye! Többet ilyet meg ne lássak!')
+            print('\033[1;31;40mNem rakhatsz el védett halat! Megdorgált a halőr!\033[0m')    
+            print('\033[1;37;40mHalőr: Ejnye-bejnye! Többet ilyet meg ne lássak!\033[0m')
             print()
         else:
             bucket.append(converted_row_to_bucket)
@@ -103,27 +103,37 @@ def throw_in():
     
     
     print()
-    print('\033[93mKAPÁSOD VAN!!! \033[0m')
-    print()                                         #Kapás kiírása
-    print('Ezt fogtad:')
-    current_catch = catch()
-    if current_catch == 'semmi':
-        print(random.choice(['Hínár!', 'Nem fogtál semmit!', 'Gumicsizma!', 'Biciklikerék!', 'AK-47-es gépkarabély! (Hívd a rendőrséget!)'])) # Ha nem fogott a felhasználó halat
-    elif current_catch == 'aranyhal':
-        print('\033[33mAranyhal!  \033[0m')
+    print('\033[1;31;40mKAPÁSOD VAN!!! \033[0m')
+    print()
+    print('Fáraszd ki a halat:')
+    random_number1 = random.randint(0, 10)
+    random_number2 = random.randint(0, 10)
+    random_answer = random_number1 * random_number2
+    question_user_answer = int(input(f'Mennyi {random_number1} * {random_number2}? Eredmény: '))
+    if random_answer == question_user_answer:
         print()
-        golden_fish()
-        golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
-        while golden_fish_choice != 'i' and golden_fish_choice != 'n':
+        print('Ezt fogtad:')
+        current_catch = catch()
+        if current_catch == 'semmi':
+            print('\033[1;37;40m' + random.choice(['Hínár!', 'Nem fogtál semmit!', 'Gumicsizma!', 'Biciklikerék!', 'AK-47-es gépkarabély! (Hívd a rendőrséget!)']) + '\033[0m') # Ha nem fogott a felhasználó halat
+        elif current_catch == 'aranyhal':
+            print('\033[33mAranyhal!  \033[0m')
+            print()
+            golden_fish()
             golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
-        if golden_fish_choice == 'i':
-            golden_fish2()
+            while golden_fish_choice != 'i' and golden_fish_choice != 'n':
+                golden_fish_choice = input('Visszaengeded a halat? [I] / [N]: ').lower()
+            if golden_fish_choice == 'i':
+                golden_fish2()
+            else:
+                print('Az aranyhalat nem engeddet vissza.')
+                print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
+                print('Ez meg fogja nehezíteni a horgászatot a számodra.')
         else:
-            print('Az aranyhalat nem engeddet vissza.')
-            print('Az aranyhal felrobbant és magával vitte a jobb kezedet.')
-            print('Ez meg fogja nehezíteni a horgászatot a számodra.')
+            manage_fish() # Ha fogott a felhasználó halat
     else:
-        manage_fish() # Ha fogott a felhasználó halat
+        print('A hal elúszott...')
+    
         
         
 
