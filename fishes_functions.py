@@ -1,4 +1,5 @@
 from data import *
+import time
 
 fishes = []
 
@@ -20,15 +21,19 @@ def new_fish():
     name = input('Hal neve: ')
     min_mass = input('Hal minimum sulya: ')
     while check(min_mass) == False:
+        time.sleep(2)
         min_mass = input('Hal minimum sulya: ')
     max_mass = input('Hal maximum sulya: ')
     while check(max_mass) == False:
+        time.sleep(2)
         max_mass = input('Hal maximum sulya: ')
     min_length = input('Hal minimum hossza: ')
     while check(min_length) == False:
+        time.sleep(2)
         max_mass = input('Hal minimum hossza: ')
     max_length = input('Hal maximum hossza: ')
     while check(max_length) == False:
+        time.sleep(2)
         max_mass = input('Hal maximum hossza: ')
     endangered = input('Hal védettsége: ')
     
