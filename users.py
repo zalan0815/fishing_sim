@@ -2,6 +2,18 @@ import os
 import time
 from fishes_functions import check, felirat
 
+wrong_password = (f"""\033[91m
+ _______________________________________________________________________________
+|  _    _ _____ ____    __    _____        _ ______ _       _____ ______ __  _  |
+| | |  | |_   _|  _ \  /_/   / ____|      | |  ____| |     / ____|___  //_/ | | |
+| | |__| | | | | |_) | / \  | (___        | | |__  | |    | (___    / // _ \| | |
+| |  __  | | | |  _ < / _ \  \___ \   _   | |  __| | |     \___ \  / /| | | | | |
+| | |  | |_| |_| |_) / ___ \ ____) | | |__| | |____| |____ ____) |/ /_| |_| |_| |
+| |_|  |_|_____|____/_/   \_\_____/   \____/|______|______|_____//_____\___/(_) |
+|_______________________________________________________________________________|
+
+\033[0m""")
+
 files = os.listdir()
 files.pop(0)
 files.pop(len(files) - 1)
@@ -62,7 +74,7 @@ def login(user_name, choice):
         if user_name == data[0]:
             pw = input('Jelszó: ')
             while pw != data[1]:
-                print(f'\033[91mHIBÁS JELSZÓ!\033[0m')
+                print(wrong_password)
                 try_again = input('Újra próbálod? (I/N): ')
                 if try_again == 'N':
                     user()
@@ -84,4 +96,4 @@ def user():
     elif check(choice) > len(users):
         return new_user()
 
-#user()
+user()
