@@ -84,3 +84,9 @@ menu()
     
 
  
+#Üdvözlő a bejelntkezés előtt
+#A horgászás kicsit lassú
+#Egy cucc megcsinálása után visszadob a legelső menübe nem pedig abba a menübe
+#Nincs kilépés a játékból 
+#A halállomány szerkesztésnél nem listázza ki mielőtt be kell írni a nevet
+#A halaim keresésénél 2 enter kell
