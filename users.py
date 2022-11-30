@@ -29,6 +29,8 @@ def list_users():
 
     count = 1
     os.system("cls")
+    print('\033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m')
+    print()
     print("--------------------------------------------------------------------------------")
     print("Profilok:")
     for u in users:
