@@ -16,7 +16,7 @@ wrong_password = (f"""\033[91m
 
 files = os.listdir()
 files.pop(0)
-files.pop(len(files) - 2)
+files.remove('__pycache__')
 
 users = []
 def list_users():
@@ -87,8 +87,8 @@ def login(user_name, choice):
                 while try_again.upper() != 'N' and try_again.upper() != 'I':
                     try_again = input('Újra próbálod? (I/N): ')
                 if try_again.upper() == 'N':
-                    choice = ''
-                    user()
+                    user_name = ''
+                    return user()
                 else:
                     pw = input('Jelszó: ')
             f.close()
