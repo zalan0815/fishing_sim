@@ -106,7 +106,11 @@ def modify_fish():
     print('Ilyen hal nincsen')
 
 def delete_fish():
-    name = input('Név: ')
+    count = 1
+    for d in fishes:
+        print(f'{count}. {d.name}')
+        count += 1
+    name = input('Hal neve: ')
     for d in fishes:
         if d.name.lower() == name.lower():
             fishes.remove(d)
@@ -127,3 +131,4 @@ def list_fishes():
             endangered = 'védett'
         print(f'{d.name} ({d.min_mass}kg - {d.max_mass}kg, {d.min_length}m - {d.max_length}m, {endangered})')
 
+delete_fish()
