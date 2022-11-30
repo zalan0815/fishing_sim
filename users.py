@@ -56,7 +56,7 @@ def new_user():
         print("Válassz másikat!")
         user_name = input('Felhasználó név: ')
     if user_name == '0':
-        user()
+       return user()
     password = str(input("Jelszó: "))
     password2 = str(input("Jelszó megerősítése: "))
     while password != password2:
