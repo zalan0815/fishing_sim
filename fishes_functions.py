@@ -106,7 +106,11 @@ def modify_fish():
     print('Ilyen hal nincsen')
 
 def delete_fish():
-    name = input('Név: ')
+    count = 1
+    for d in fishes:
+        print(f'{count}. {d.name}')
+        count += 1
+    name = input('Hal neve: ')
     for d in fishes:
         if d.name.lower() == name.lower():
             fishes.remove(d)
