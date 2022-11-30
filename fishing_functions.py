@@ -106,8 +106,8 @@ def throw_in():
     print('\033[1;31;40mKAPÁSOD VAN!!!\033[0m')
     print()
     print('Fáraszd ki a halat:')
-    random_number1 = random.randint(0, 10)
-    random_number2 = random.randint(0, 10)
+    random_number1 = random.randint(0, 15)
+    random_number2 = random.randint(0, 15)
     random_answer = random_number1 * random_number2
     try:
         question_user_answer = int(input(f'Mennyi {random_number1} * {random_number2}? Eredmény: '))

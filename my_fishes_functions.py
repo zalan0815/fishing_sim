@@ -35,7 +35,6 @@ def search_by_name():
     for f in my_fishes:
         if name.lower() in f.name.lower():
             print(f'{f.name} ({f.mass}kg, {f.length}m)')
-    input('\n')
 
 def all_of_my_fishes():
     for f in my_fishes:
