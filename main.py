@@ -2,6 +2,7 @@ from fishing_functions import *
 from my_fishes_functions import *
 from fishes_functions import *
 import os
+import sys
 
 def sub_menu_1():
     os.system('cls')   
@@ -69,6 +70,8 @@ def menu():
     print('1. Játék')
     print('2. Halállomány beállítása')
     print('3. Kapásaim')
+    print()
+    print('0. Kilépés')
     menu_user_choice = input('Választás: ')
 
     if menu_user_choice == '1':
@@ -80,6 +83,8 @@ def menu():
     elif menu_user_choice == '3':
         
         sub_menu_2()
+    elif menu_user_choice == '0':
+        sys.exit()
     else:
         menu()
     
