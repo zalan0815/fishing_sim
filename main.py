@@ -4,7 +4,9 @@ from fishes_functions import *
 import os
 
 def sub_menu_1():
-    os.system('cls')    
+    os.system('cls')   
+    print('\033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m')
+    print() 
     print('Válasszon menüpontot!')
     print('1. Halak kilistázása')
     print('2. Új hal hozzáadása')
@@ -30,7 +32,9 @@ def sub_menu_1():
     
 
 def sub_menu_2():
-    os.system('cls')    
+    os.system('cls') 
+    print('\033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m')
+    print()   
     print('Válasszon menüpontot!')
     print('1. Keresés (név alapján)')
     print('2. Halaim kilistázása')
@@ -56,8 +60,11 @@ def sub_menu_2():
         sub_menu_2()
 
 def menu():
-    os.system('cls')    
-    print('Üdvözlünk a \033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m - ban!')
+    os.system('cls')  
+    print('\033[1;33;40mHorgászok Ligája\033[0m \033[1;37;40m1.1.3\033[0m')
+    print()
+    print('Üdvözlünk', '\033[1;37;40m', file.removesuffix('.csv'), '\033[0m','!')
+    print()
     print('Válasszon menüpontot!')
     print('1. Játék')
     print('2. Halállomány beállítása')
@@ -84,7 +91,3 @@ menu()
     
 
  
-#Üdvözlő a bejelntkezés előtt
-#Egy cucc megcsinálása után visszadob a legelső menübe nem pedig abba a menübe
-#Nincs kilépés a játékból 
-#A halállomány szerkesztésnél nem listázza ki mielőtt be kell írni a nevet

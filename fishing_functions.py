@@ -149,7 +149,9 @@ def start_game():
         print('Vödör tartalma:')
         print()
         for fish in bucket:
+            print('\033[1;37;40m')
             print(f'\tFaj: {get_string(fish, 0)} | Tömeg: {get_float(fish, 1)} kg | Hossz: {get_float(fish, 2)} m')
+            print('\033[0m')
             print()
     store_fishes(bucket) # vödör fájlba írása3
 
