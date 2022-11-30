@@ -15,8 +15,9 @@ wrong_password = (f"""\033[91m
 \033[0m""")
 
 files = os.listdir()
-files.pop(0)
+files.remove('.git')
 files.remove('__pycache__')
+files.remove('.vscode')
 
 users = []
 def list_users():
